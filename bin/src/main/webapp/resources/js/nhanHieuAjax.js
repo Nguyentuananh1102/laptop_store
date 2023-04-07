@@ -22,16 +22,16 @@ $(document).ready(function(){
     };
     
 
-	ajaxGet();	
+	ajaxGet(1);	
 	
 	// do get
-	function ajaxGet(){
+	function ajaxGet(page){
 		$.ajax({
 			type: "GET",		
-			url: "http://localhost:8080/laptopshop/api/nhan-hieu/all",
+			url: "http://localhost:8080/laptopshop/api/nhan-hieu/all?page=" + page,
 			success: function(result){
-				$.each(result, function(i, nhanHieu){
-					var nhanHieuRow = '<tr>' +
+				$.each(result.content, function(i, nhanHieu){
+					var nhanHieuRow = '<tr style="text-align: center;">' +
 					                  '<td width="20%"">' + nhanHieu.id + '</td>' +
 					                  '<td>' + nhanHieu.tenHangSanXuat + '</td>' +
 					                  '<td>'+'<input type="hidden" value=' + nhanHieu.id + '>'
@@ -40,6 +40,20 @@ $(document).ready(function(){
 				                      '</tr>';
 					$('.nhanHieuTable tbody').append(nhanHieuRow);
 				});
+				
+				if(result.totalPages > 1 ){
+					for(var numberPage = 1; numberPage <= result.totalPages; numberPage++) {
+						var li = '<li class="page-item "><a class="pageNumber">'+numberPage+'</a></li>';
+					    $('.pagination').append(li);
+					};				
+					
+					// active page pagination
+			    	$(".pageNumber").each(function(index){	
+			    		if($(this).text() == page){
+			    			$(this).parent().removeClass().addClass("page-item active");
+			    		}
+			    	});
+				};
 			},
 			error : function(e){
 				alert("Error: ",e);
@@ -159,7 +173,7 @@ $(document).ready(function(){
 			  type : "DELETE",
 			  url : "http://localhost:8080/laptopshop/api/nhan-hieu/delete/" + nhanHieuId,
 			  success: function(resultMsg){
-				 workingObject.closest("tr").remove();
+				 resetDataForDelete();
 				 alert("Xóa thành công");
 			  },
 			  error : function(e) {
@@ -173,8 +187,34 @@ $(document).ready(function(){
     // reset table after post, put
     function resetData(){
     	$('.nhanHieuTable tbody tr').remove();
-    	ajaxGet();
+    	var page = $('li.active').children().text();
+    	$('.pagination li').remove();
+    	var count = $('.nhanHieuTable tbody').children().length;
+    	ajaxGet(page);
     };
+    
+    // reset table after post, put
+    function resetDataForDelete(){
+    	var count = $('.nhanHieuTable tbody').children().length;
+    	$('.nhanHieuTable tbody tr').remove();
+    	var page = $('li.active').children().text();
+    	$('.pagination li').remove();
+    	if(count == 1){    	
+    		ajaxGet(page -1 );
+    	} else {
+    		ajaxGet(page);
+    	}
+
+    };
+    
+    // event khi click vào phân trang Nhãn hiệu
+	$(document).on('click', '.pageNumber', function (event){
+//		event.preventDefault();
+		var page = $(this).text();	
+    	$('.nhanHieuTable tbody tr').remove();
+    	$('.pagination li').remove();
+    	ajaxGet(page);	
+	});
     
     
     function removeElementsByClass(className){
