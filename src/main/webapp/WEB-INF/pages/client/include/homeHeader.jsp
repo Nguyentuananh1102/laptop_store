@@ -73,30 +73,21 @@
 						<ul class="dropdown-menu" style="background: #286090" id="danhmuc2">
 							
 							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=Laptop">Laptop</a></li>
-							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=PC ĐỒNG BỘ &amp; PC GAMING">PC ĐỒNG BỘ &amp; PC GAMING</a></li>
-							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=TB NGHE NHÌN &amp; GIẢI TRÍ">TB NGHE NHÌN &amp; GIẢI TRÍ</a></li>
 							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=LINH KIỆN MÁY TÍNH">LINH KIỆN MÁY TÍNH</a></li>
 							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=THIẾT BỊ LƯU TRỮ">THIẾT BỊ LƯU TRỮ</a></li>
 							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=THIẾT BỊ MẠNG">THIẾT BỊ MẠNG</a></li>
+							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=PC ĐỒNG BỘ &amp; PC GAMING">PC ĐỒNG BỘ &amp; PC GAMING</a></li>
+							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=TB NGHE NHÌN &amp; GIẢI TRÍ">TB NGHE NHÌN &amp; GIẢI TRÍ</a></li>
+							
+							
 							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=CAMERA QUAN SÁT">CAMERA QUAN SÁT</a></li>
 							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=PHỤ KIỆN CÁC LOẠI">PHỤ KIỆN CÁC LOẠI</a></li>
 							<li><a style="padding-right: 100px" href="/laptopshop/store?brand=THIẾT BỊ VĂN PHÒNG">THIẾT BỊ VĂN PHÒNG</a></li>
-<!-- 							
-							<li ><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=Laptop" >Laptop</a></li>
-							<li><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=PC ĐỒNG BỘ &amp; PC GAMING">PC ĐỒNG BỘ &amp; PC GAMING</a></li>
-							<li><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=TB NGHE NHÌN &amp; GIẢI TRÍ">TB NGHE NHÌN &amp; GIẢI TRÍ</a></li>
-							<li><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=LINH KIỆN MÁY TÍNH">LINH KIỆN MÁY TÍNH</a></li>
-							<li><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=THIẾT BỊ LƯU TRỮ">THIẾT BỊ LƯU TRỮ</a></li>
-							<li><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=THIẾT BỊ MẠNG">THIẾT BỊ MẠNG</a></li>
-							<li><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=CAMERA QUAN SÁT">CAMERA QUAN SÁT</a></li>
-							<li><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=PHỤ KIỆN CÁC LOẠI">PHỤ KIỆN CÁC LOẠI</a></li>
-							<li><a style="padding-right: 100px" href="<%=request.getContextPath()%>/store?brand=THIẾT BỊ VĂN PHÒNG">THIẾT BỊ VĂN PHÒNG</a></li> -->
+
 						</ul>
 					</li>
-					<li><a href="/laptopshop/shipping">Miễn
-							phí vận chuyển</a></li>
-					<li><a href="/laptopshop/guarantee">Bảo
-							hành tận nơi</a></li>
+					<li><a href="/laptopshop/shipping">Chính sách vận chuyển</a></li>
+					<li><a href="/laptopshop/guarantee">Bảo	hành </a></li>
 
 					<li><a href="/laptopshop/contact">Liên hệ</a></li>
 				</ul>

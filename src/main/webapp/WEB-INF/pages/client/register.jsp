@@ -95,6 +95,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    
+
 </head>
 
 <body>
@@ -142,7 +144,7 @@
 						placeholder="Địa chỉ" required="required"></form:input>
 					<form:errors class="error" path="diaChi"></form:errors>
 				</div>
-				<input id="submit" type="submit" value="ĐĂNG KÝ">
+				<input id="submit" type="submit" value="ĐĂNG KÝ" >
 				<p class="message" style="font-size: 18; padding-top:10px"> Đã có tài khoản? <a href="<c:url value='/login'/> ">Đăng nhập</a></p>
 			</form:form>
 		</div>
