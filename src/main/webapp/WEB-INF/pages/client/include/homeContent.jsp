@@ -1,6 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script src="<c:url value='/js/client/homeAjax.js'/>" ></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<Style>
+			
+
+  
+			.scroll{
+			display: none;
+			opacity: 0.3;
+			background-color: rgb(15, 15, 15);
+			width: 40px;
+			height: 40px;
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			border-radius: 5px;
+			border: none;
+			}
+			.scroll:hover {
+				opacity: 1;
+			}
+			.arrow-up{
+			color: white;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -9px;
+			margin-left: -7px;
+		}
+		</Style>
 		   <!--start-image-slider---->
 					<div class="wrap">
 					<div class="image-slider">
@@ -51,4 +80,30 @@
 		    </div>
 		    <div class="clear"> </div>
 		    </div>
+			
+			
+				
+				<button title="Back to top" class="scroll" onclick="scrollToTop()">
+					<span class="arrow-up glyphicon glyphicon-chevron-up"></span>
+				</button>    
+			
+
+            <script >
+				function scrollToTop() {
+					window.scrollTo({
+						top: 0,
+						behavior: "smooth" // Tạo hiệu ứng cuộn mượt
+					});
+				}
+
+				window.onscroll = function() {
+					var button = document.querySelector(".scroll");
+					if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+						button.style.display = "block";
+					} else {
+						button.style.display = "none";
+					}
+				};
+				
+			</script>
 		    
